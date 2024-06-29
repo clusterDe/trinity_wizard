@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'components/home_body.dart';
+
 class HomeScreen extends StatelessWidget {
   static const String routeName = '/';
   const HomeScreen({super.key});
@@ -7,7 +9,10 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text('Contact'),
+      ),
+      body: const HomeBody(),
     );
   }
 }

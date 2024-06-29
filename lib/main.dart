@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:trinity_wizard/provider/home/home_provider.dart';
 import 'package:trinity_wizard/theme.dart';
 
 import 'route.dart';
@@ -12,12 +14,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      title: 'Trinity Wizard',
-      theme: DataTheme.themeData(),
-      routerDelegate: route.routerDelegate,
-      routeInformationParser: route.routeInformationParser,
-      routeInformationProvider: route.routeInformationProvider,
+    return MultiProvider(
+      providers: [
+        Provider(
+          create: (context) => HomeProvider(context),
+        ),
+      ],
+      child: MaterialApp.router(
+        title: 'Trinity Wizard',
+        theme: DataTheme.themeData(),
+        routerDelegate: route.routerDelegate,
+        routeInformationParser: route.routeInformationParser,
+        routeInformationProvider: route.routeInformationProvider,
+      ),
     );
   }
 }
