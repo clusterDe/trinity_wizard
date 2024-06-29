@@ -6,6 +6,7 @@ import 'package:trinity_wizard/theme.dart';
 import 'route.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 

@@ -9,6 +9,12 @@ class DataTheme {
       colorScheme: ColorScheme.light(
         primary: orangeColor,
       ),
+      inputDecorationTheme: InputDecorationTheme(
+        contentPadding: EdgeInsets.symmetric(horizontal: defPadding),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(defBorderRadius),
+        ),
+      ),
     );
   }
 }

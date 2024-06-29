@@ -23,7 +23,7 @@ class HomeBody extends StatelessWidget {
         message: context.watch<HomeProvider>().msgContact,
         enumValue: ResultGetContactState.values,
         builder: (context, homeProv, _) {
-          var data = homeProv.dataContact?.data;
+          var data = homeProv.listContact;
 
           if (data != null) {
             return GridView.builder(
@@ -37,7 +37,12 @@ class HomeBody extends StatelessWidget {
               ),
               itemBuilder: (BuildContext context, int index) {
                 return CardContact(
-                  press: () {},
+                  press: () {
+                    homeProv.goToDetailContact(
+                      context,
+                      index: index,
+                    );
+                  },
                   name: '${data[index].firstName} ${data[index].lastName}',
                 );
               },
