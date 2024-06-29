@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trinity_wizard/theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,12 +10,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Trinity Wizard',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: DataTheme.themeData(),
     );
   }
 }
